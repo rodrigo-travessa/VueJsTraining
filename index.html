@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Learning Vue</title>    
         <script src="https://unpkg.com/vue@3.0.2"></script>
+        <link rel="stylesheet" href="styles.css">
     
     </head>
     <body>
@@ -17,8 +18,21 @@
             <button @click="multiplyLikes"> - </button>
             <p>{{name}}</p>
             <h1 v-if="likes>9000">Likes Are Over 9000!!!</h1>
+            <br>
+            <div>
+                <ul>
+                    <li v-for="item in titles">
+                        {{item}}
+                    </li>
+                </ul>
+            </div>
+            <br>
+            <div class="box" @mouseover="handleEvent">Mouseover (enter)</div>
+            <div class="box" @mouseleave="handleEvent">MouseLeave</div>
+            <div class="box" @dblclick="handleEvent">DoubleClick</div>
+            <div class="box" @mousemove="handleMouseMove"> x = {{x}} y = {{y}}</div>
        </div>
-
+       
        <div id="phonyPhone">
             <h1 v-if="showNumber">{{phoneNumber}}</h1>
             <button @click="phoneNumber++">Add 1 To Number</button>

@@ -4,13 +4,25 @@ const app = Vue.createApp({
     data(){
         return {
             likes : 50,
-            name : 'Rodrigo'
+            name : 'Rodrigo',
+            x: 0,
+            y: 0,
+            titles : [ 'title1', 'title2', 'title3', 'title4', 'title5', 'title6', 'title6'],
         }
     },
     methods: {
-        multiplyLikes(){
+        multiplyLikes(e){
+            console.log(e)
             this.name = 'thiago'
             this.likes = this.likes * 10
+        },
+
+        handleEvent(e){
+            console.log(e)
+        },
+        handleMouseMove(e){
+            this.x = e.offsetX,
+            this.y = e.offsetY
         }
 
     }
