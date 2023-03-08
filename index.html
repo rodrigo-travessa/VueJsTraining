@@ -17,7 +17,16 @@
             <button @click="multiplyLikes"> - </button>
             <p>{{name}}</p>
        </div>
+
+       <div id="phonyPhone">
+            <h1>{{phoneNumber}}</h1>
+            <button @click="phoneNumber++">Add 1 To Number</button>
+            <button @click="phoneNumber= phoneNumber*10">Add new Digit</button>
+            <button @click="phoneNumber=0">Restart</button>
+
+       </div>
         
         <script src="app.js"></script>
+        <script src="phonyPhone.js"></script>
     </body>
 </html>
