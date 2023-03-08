@@ -12,7 +12,10 @@
        <div id="app">
             <h2>Template relocated inside the HTML Likes {{likes}}</h2>
             <!--v-on:click="JS Code Inside" this triggers functions. NICE!-->
-            <button v-on:click="likes+=1">Click This</button>
+            <button v-on:click="likes++"> + </button>
+            <!--v-on:click="functionName()" this triggers functions. NICE!-->
+            <button @click="multiplyLikes"> - </button>
+            <p>{{name}}</p>
        </div>
         
         <script src="app.js"></script>
