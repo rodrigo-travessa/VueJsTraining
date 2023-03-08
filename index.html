@@ -21,6 +21,15 @@
             <br>
             <div>
                 <ul>
+                    <li class="card" v-for="item in complex">
+                        <h3>{{item.title}}</h3>
+                        <img :src="item.img" > 
+                        <h4> {{item.author}}</h4>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <ul>
                     <li v-for="item in titles">
                         {{item}}
                     </li>
