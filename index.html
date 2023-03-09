@@ -21,18 +21,37 @@
             <br>
             <div>
                 <ul>
+                    <li @click="toggleFav(item)" :class="{ fav:item.isFav, card:true}" v-for="item in complex">
+                        <h3>{{item.title}}</h3>
+                        <img :src="item.img" > 
+                        <h4> {{item.author}}</h4>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>The Favorites Filtered List</h2>
+                <ul>
+                    <li v-for="item in filteredList">
+                        {{item}}
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h2>just a list</h2>
+                <ul>
                     <li v-for="item in titles">
                         {{item}}
                     </li>
                 </ul>
             </div>
             <br>
+            <h2>List OF boxes showing events</h2>
             <div class="box" @mouseover="handleEvent">Mouseover (enter)</div>
             <div class="box" @mouseleave="handleEvent">MouseLeave</div>
             <div class="box" @dblclick="handleEvent">DoubleClick</div>
             <div class="box" @mousemove="handleMouseMove"> x = {{x}} y = {{y}}</div>
        </div>
-       
+       <h2>Another useless App separate file</h2>
        <div id="phonyPhone">
             <h1 v-if="showNumber">{{phoneNumber}}</h1>
             <button @click="phoneNumber++">Add 1 To Number</button>
