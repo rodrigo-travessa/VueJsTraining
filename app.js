@@ -11,9 +11,7 @@ const app = Vue.createApp({
             complex :[{title: 'name of the song', author: 'that guy', img:'assets/1.jpeg', isFav : true},
                       {title: 'name of the movie', author: 'this guy', img:'assets/2.jpeg', isFav : true},
                       {title: 'name of the play', author: 'those guys', img:'assets/3.jpeg', isFav : false},
-                      {title: 'name of the stuff', author: 'them guys', img:'assets/4.jpeg', isFav : true},
-        ]}
-    },
+                      {title: 'name of the stuff', author: 'them guys', img:'assets/4.jpeg', isFav : true}]}},
     methods: {
         multiplyLikes(e){
             console.log(e)
@@ -32,8 +30,15 @@ const app = Vue.createApp({
             this.complex[this.complex.indexOf(item)].isFav = !item.isFav
         },
 
+    },
+    computed: {
+        filteredList(){
+            return this.complex.filter((item) => item.isFav == true)
+        }
+
     }
 })
+
 
 
 app.mount('#app')
