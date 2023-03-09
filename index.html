@@ -21,7 +21,7 @@
             <br>
             <div>
                 <ul>
-                    <li class="card" v-for="item in complex">
+                    <li @click="toggleFav(item)" :class="{ fav:item.isFav, card:true}" v-for="item in complex">
                         <h3>{{item.title}}</h3>
                         <img :src="item.img" > 
                         <h4> {{item.author}}</h4>
